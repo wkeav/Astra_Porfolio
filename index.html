@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astra's Porfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcome-page" class="welcome-page">
+        <div class="welcome-content">
+            <h1 class="welcome-name">Astra</h1>
+            <p id="quote" class="welcome-quote"></p>
+
+            <div class="welcome-mountain">
+                <img src="assets/images/Mountain.png" alt="Mountain" class="rotating-image active" style="width: 400px; height: auto;">
+                <img src="assets/images/Van.png" alt="Van" class="rotating-image" style="width: 800px; height: auto;">
+                <img src="assets/images/Wave.png" alt="Wave" class="rotating-image" style="width: 400px; height: auto;">
+            </div>
+            <button id="focus-btn" class="focus-btn">
+                <span> Get to know me !</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="assets/videos/background-animation.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Option 2: CSS Animated Background (currently active) -->
+        <!-- <div class="animated-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
+        </div> -->
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="theme-btn" class="theme-btn"><img src="assets/images/Sun.png" alt="theme" style="width: 45px; height: 45px; object-fit: contain;"></button>
+        <button id="volume-btn" class="volume-btn"><img src="assets/images/Music.png" alt="theme" style="width: 45px; height: 45px; object-fit: contain;"></button>
+    </div>
+
+    <!-- Star Icon -->
+    <div class="star-icon">⭐</div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Home Tab -->
+        <div class="tab-header">
+            <span class="tab-title">Home</span>
+        </div>
+
+        <!-- Content Card -->
+        <div class="content-card">
+            <!-- Main Heading -->
+            <h1 class="main-heading">
+                <span id="greeting">Hello</span>! <span class="name-highlight">I'm Astra</span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="subtitle">Software Developer</p>
+
+            <!-- Navigation Icons -->
+            <div class="nav-icons">
+                <div class="nav-item">
+                    <div class="icon"><img src="assets/images/About.png" alt="about" class="icon-img"></div>
+                    <span class="nav-label">About</span>
+                </div>
+                <div class="nav-item">
+                    <div class="icon"><img src="assets/images/Cat.png" alt="experience" class="icon-img"></div>
+                    <span class="nav-label">Experience</span>
+                </div>
+                <div class="nav-item">
+                    <div class="icon"><img src="assets/images/Project.png" alt="projects" class="icon-img"></div>
+                    <span class="nav-label">Projects</span>
+                </div>
+                <div class="nav-item">
+                    <div class="icon"><img src="assets/images/Edcuation-removebg-preview.png" alt="Edcuation class="icon-img"></div>
+                    <span class="nav-label">Edcuation</span>
+                </div>
+                <div class="nav-item">
+                    <div class="icon"><img src="assets/images/Mail.png" alt="mail" class="icon-img"></div>
+                    <span class="nav-label">Contact</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/astra-n-40b024259/" target="_blank" class="social-icon"><img src="assets/images/linkedin-removebg-preview.png" alt="LinkedIn" style="width: 30px; height: 30px; object-fit: contain;"></a>
+            <a href="https://github.com/wkeav" target="_blank" class="social-icon"><img src="assets/images/github-removebg-preview.png" alt="Github" style="width: 30px; height: 30px; object-fit: contain;"></a>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            Made with ♥ by Astra
+        </div>
+    </div>
+
+    <!-- Decorative Fish -->
+    <div class="frog-character"><img src="assets/images/Fish.png" alt="fish" class="fish-img"></div>
+
+    <!-- Modal Overlay -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-container">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <span id="modal-tab-title" class="modal-tab-title">about</span>
+                <button id="close-modal" class="close-btn">[×]</button>
+            </div>
+            
+            <!-- Modal Content -->
+            <div id="modal-content" class="modal-content">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </div>
+        
+        <!-- Navigation tabs at bottom -->
+        <div class="modal-nav-tabs">
+            <div class="nav-tab" data-section="About">About</div>
+            <div class="nav-tab" data-section="Experience">Experience</div>
+            <div class="nav-tab" data-section="Projects">Projects</div>
+            <div class="nav-tab" data-section="Edcuation">Edcuation</div>
+            <div class="nav-tab" data-section="Contact">Contact</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+const quotes = [
+    '"Learning is life. Worry not if you don\'t understand a concept, and keep the show going!" - Unknown',
+    '"Be yourself; everyone else is already taken." - Oscar Wilde',
+    '"Go confidently in the direction of your dreams. Live the life you have imagined" - Henry David Thoreau',
+    '"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela',
+    '"Be kind whenever possible. It is always possible." - 14th Dalai Lama'
+];
+
+let currentQuoteIndex = 0;
+
+function changeQuote() {
+    const quoteElement = document.getElementById('quote');
+    quoteElement.textContent = quotes[currentQuoteIndex];
+    currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+}
+
+setInterval(changeQuote, 10000); // Change quote every 10 seconds
+
+changeQuote();
+</script>
+</body>
+</html>
