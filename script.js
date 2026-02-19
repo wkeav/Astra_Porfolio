@@ -155,19 +155,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p style="color: #666;">Developed and maintained web applications using modern frontend and backend technologies.</p>
                     </div>
                     <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
-                        <h3 style="color: #333; margin-bottom: 5px;">AI Trainer - Multimodal Data Annotation </h3>
-                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">Handshake AI• Dec 2025-Present</p>
-                        <p style="color: #666;">Creating digital illustrations and animations for various clients and personal projects.</p>
+                        <h3 style="color: #333; margin-bottom: 5px;">AI Trainer - Multimodal Data Annotation</h3>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">Handshake AI • Dec 2025-Present</p>
+                        <p style="color: #666;">Training AI models through multimodal data annotation and quality assurance.</p>
                     </div>
                     <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
                         <h3 style="color: #333; margin-bottom: 5px;">Software Engineer Intern</h3>
                         <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">Springer Capital • Oct 2025-Jan 2026</p>
-                        <p style="color: #666;">Helped engineered a Python-based DLT generator using Django and Flask-RESTX that automates creation of production-ready data
-pipeline services from templates by modeled base data schemas and designed secure API communication patterns for the DLT frame-work.</p>
+                        <p style="color: #666;">Engineered a Python-based DLT generator using Django and Flask-RESTX that automates creation of data pipeline services.</p>
                     </div>
                     <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
                         <h3 style="color: #333; margin-bottom: 5px;">Undergraduate Researcher</h3>
-                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">University of Oklahoma - Gallogly College of Engineering • May 2025-Jan 2026</p>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">University of Oklahoma • May 2025-Jan 2026</p>
                         <p style="color: #666;">Addressed 15% misidentification rate in endoscopic surgeries by collaborating with Ph.D. researchers to develop deep learning models
 for real-time medical image classification and anatomical structure identification using TensorFlow.</p>
                     </div>
@@ -220,31 +219,28 @@ matics, and research, improving AI accuracy.</p>
                     <div style="background: #f8f9fa; border-radius: 15px; padding: 20px; border: 2px solid #eee;">
                         <h2 style="color: #333; margin-bottom: 10px;">Pulse</h2>
                         <p style="color: #333; margin-bottom: 10px;">JP Morgan Code for Good Hackathon</p>
-                        <p style="color: #666; margin-bottom: 15px;">Full-Stack | React, Flask, Fireworks AI, NewsAPI, Leaflet.js </p>
-                        <p style="color: #666; margin-bottom: 15px;">Partnered with Black Heart Association (BHA) to address scheduling and prioritization challenges in their mission to improve heart health
-in underserved communities by developing Pulse. </p>
+                        <p style="color: #666; margin-bottom: 15px;">React, Flask, Fireworks AI, NewsAPI, Leaflet.js</p>
+                        <p style="color: #666; margin-bottom: 15px;">Partnered with Black Heart Association to develop a scheduling platform for heart health programs in underserved communities.</p>
                         <a href="https://github.com/wkeav/Pulse" style="color: #FF8C00; text-decoration: none;">View Project →</a>
                     </div>
                     <div style="background: #f8f9fa; border-radius: 15px; padding: 20px; border: 2px solid #eee;">
                         <h2 style="color: #333; margin-bottom: 10px;">Adventure Generator</h2>
-                        <p style="color: #666; margin-bottom: 15px;">Full-Stack | Spring-Boot, PostgreSQL, Spring security, Openweather API, Geolocation API  </p>
-                        <p style="color: #666; margin-bottom: 15px;">A personalized adventure recommendation platform that helps couples and friends discover meaningful activities based on their mood and the weather conditions. Whether you're together or miles apart, find your next memorable adventure!</p>
+                        <p style="color: #666; margin-bottom: 15px;">Spring-Boot, PostgreSQL, Spring Security, APIs</p>
+                        <p style="color: #666; margin-bottom: 15px;">A personalized adventure recommendation platform that helps couples discover activities based on mood and weather conditions.</p>
                         <a href="https://github.com/wkeav/Adventure_Generator" style="color: #FF8C00; text-decoration: none;">View Project →</a>
                     </div>
                     <div style="background: #f8f9fa; border-radius: 15px; padding: 20px; border: 2px solid #eee;">
                         <h2 style="color: #333; margin-bottom: 10px;">Pocket Penguin</h2>
-                        <p style="color: #666; margin-bottom: 15px;">Full-Stack | Flutter/Dart, Django, SQLite, Docker</p>
-                        <p style="color: #666; margin-bottom: 15px;">A gamified wellness and habit-tracking application with a Django REST API backend and
-Flutter frontend, implementing features such as habit creation, progress analytics, and an interactive penguin companion to engage
-users in healthy habit formation</p>
-                        <a href="https://wkeav.github.io/Pocket_Penguin/" style="color: #FF8C00; text-decoration: none;">View Projects (Live server) → </a>
+                        <p style="color: #666; margin-bottom: 15px;">Flutter/Dart, Django, SQLite, Docker</p>
+                        <p style="color: #666; margin-bottom: 15px;">A gamified wellness app with habit tracking, progress analytics, and an interactive penguin companion to engage users in healthy habits.</p>
+                        <a href="https://wkeav.github.io/Pocket_Penguin/" style="color: #FF8C00; text-decoration: none;">Live Demo →</a>
                         <br>
-                        <a href="https://github.com/wkeav/Pocket_Penguin" style="color: #888; font-size: 13px; text-decoration: none; display: inline-block; margin-top: 2px;">GitHub Repo &rarr;</a>
+                        <a href="https://github.com/wkeav/Pocket_Penguin" style="color: #888; font-size: 13px; text-decoration: none; display: inline-block; margin-top: 5px;">GitHub →</a>
                     </div>
                     <div style="background: #f8f9fa; border-radius: 15px; padding: 20px; border: 2px solid #eee;">
-                        <h3 style="color: #333; margin-bottom: 10px;">National Park Service System (NPSS) Database Management Application</h3>
+                        <h3 style="color: #333; margin-bottom: 10px;">National Park Service Database</h3>
                         <p style="color: #666; margin-bottom: 15px;">Java, Azure SQL Database</p>
-                        <p style="color: #666; margin-bottom: 15px;">This project is a comprehensive database management system for the National Park Service System. Features robust data modeling, complex entity relationships, and advanced reporting capabilities to manage parks, visitors, staff, and operations—demonstrating best practices in database design and implementation.</p>
+                        <p style="color: #666; margin-bottom: 15px;">Database management system for the National Park Service with data modeling, entity relationships, and reporting capabilities.</p>
                         <a href="https://github.com/wkeav/NPSS_Database_System" style="color: #FF8C00; text-decoration: none;">View Project →</a>
                     </div>
                 </div>

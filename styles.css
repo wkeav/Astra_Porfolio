@@ -247,7 +247,7 @@ body {
 .theme-toggle {
     position: fixed;
     bottom: 20px;
-    left: 20px;
+    left: 8px; /* was 20px, now more left */
     display: flex;
     gap: 10px;
     z-index: 100;
@@ -293,7 +293,7 @@ body {
 .music-icon {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 8px; /* was 20px, now more right */
     z-index: 10;
 }
 
@@ -797,10 +797,11 @@ body.dark-mode .copyright {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 700px;
-    max-width: 90vw;
-    max-height: 80vh;
+    max-width: 95vw;
+    max-height: 85vh;
     position: relative;
     animation: modalSlideIn 0.3s ease-out;
+    margin: 10px;
 }
 
 @keyframes modalSlideIn {
@@ -817,15 +818,17 @@ body.dark-mode .copyright {
 .modal-header {
     background: #4a4a4a;
     color: white;
-    padding: 15px 20px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 50px;
 }
 
 .modal-tab-title {
     font-size: 16px;
     font-weight: 500;
+    flex: 1;
 }
 
 .close-btn {
@@ -848,6 +851,10 @@ body.dark-mode .copyright {
     max-height: 60vh;
     overflow-y: auto;
     background: white;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.6;
 }
 
 /* About Page Specific Styles */
@@ -1005,63 +1012,136 @@ body.dark-mode .nav-tab.active {
     color: #FF8C00;
 }
 
+/* Dark mode mobile nav tabs */
+@media (max-width: 768px) {
+    body.dark-mode .modal-nav-tabs {
+        background: rgba(45, 55, 72, 0.95);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    body.dark-mode .nav-tab {
+        background: rgba(74, 85, 104, 0.8);
+        color: #e2e8f0;
+    }
+    
+    body.dark-mode .nav-tab.active {
+        background: #2d3748;
+        border-color: #FF8C00;
+        color: #FF8C00;
+    }
+}
+
 /* Responsive Modal */
 @media (max-width: 768px) {
+    /* Restructure modal overlay for mobile - full screen with content on top, nav at bottom */
+    .modal-overlay {
+        align-items: stretch;
+        padding: 0;
+    }
+    
+    .modal-overlay.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
     .modal-container {
-        width: 95vw;
-        max-height: 90vh;
-        margin: 20px;
-        border-radius: 15px;
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .modal-header {
+        padding: 12px 15px;
+        flex-shrink: 0;
     }
     
     .modal-content {
-        padding: 25px 20px;
-        max-height: calc(90vh - 120px);
+        flex: 1;
+        padding: 20px;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        text-align: center;
     }
     
     .about-content {
         flex-direction: column;
         text-align: center;
         gap: 20px;
+        width: 100%;
     }
     
     .profile-image {
-        width: 120px;
-        height: 120px;
-        font-size: 50px;
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
         align-self: center;
         background: transparent;
+        margin-bottom: 10px;
     }
     
     .about-name {
-        font-size: 28px;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 15px;
     }
     
+    /* Navigation tabs fixed at bottom */
     .modal-nav-tabs {
-        gap: 12px;
-        padding: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+        padding: 10px 8px;
+        padding-bottom: calc(10px + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 1001;
     }
     
     .nav-tab {
-        padding: 12px 18px;
-        font-size: 14px;
-        min-width: 80px;
-        border-radius: 20px;
+        padding: 12px 8px;
+        font-size: 12px;
+        min-width: unset;
+        max-width: unset;
+        border-radius: 12px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        flex: none;
+        text-align: center;
+        background: rgba(240, 240, 240, 0.8);
+    }
+    
+    .nav-tab.active {
+        background: white;
+        border-color: #FF8C00;
+        color: #FF8C00;
+        box-shadow: 0 2px 8px rgba(255, 140, 0, 0.3);
+    }
+    
+    .close-btn {
+        padding: 8px 12px;
+        font-size: 16px;
+        min-width: 35px;
+        min-height: 35px;
         touch-action: manipulation;
         -webkit-tap-highlight-color: transparent;
     }
     
-    .close-btn {
-        padding: 10px 15px;
-        font-size: 18px;
-        min-width: 40px;
-        min-height: 40px;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
+    /* Add padding at bottom of content to account for fixed nav */
+    .modal-content {
+        padding-bottom: 100px;
     }
 }
 
@@ -1091,6 +1171,58 @@ body.dark-mode .nav-tab.active {
     
     .content-card {
         padding: 25px 15px 20px;
+    }
+    
+    /* Modal improvements for very small screens */
+    .modal-content {
+        padding: 15px;
+        padding-bottom: 90px;
+    }
+    
+    .nav-tab {
+        padding: 10px 6px;
+        font-size: 11px;
+    }
+    
+    .modal-nav-tabs {
+        gap: 4px;
+        padding: 8px 5px;
+    }
+    
+    /* Responsive text in modals */
+    .modal-content h2 {
+        font-size: 20px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+        word-wrap: break-word;
+    }
+    
+    .modal-content h3 {
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 10px !important;
+        word-wrap: break-word;
+    }
+    
+    .modal-content p {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 10px !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Make project cards more mobile-friendly */
+    .modal-content div[style*="grid-template-columns"] {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .modal-content div[style*="border-radius: 15px"] {
+        padding: 15px !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
 
@@ -1162,4 +1294,19 @@ body.dark-mode .nav-tab.active {
     .theme-btn:active, .volume-btn:active {
         transform: scale(0.95);
     }
+}
+
+/* Global text wrapping for modal content */
+.modal-content * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+.modal-content a {
+    word-break: break-all;
+}
+
+.modal-content div[style] {
+    box-sizing: border-box;
 }
