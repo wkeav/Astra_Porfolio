@@ -7,7 +7,9 @@ url: "https://wkeav.github.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+
+# Disable default theme processing
+theme: null
 
 # Exclude files from processing
 exclude:
@@ -19,10 +21,13 @@ exclude:
 include:
   - _pages
 
-# Plugins
+# Plugins (minimal for static site)
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
 
-# Collections
-collections_dir: collections
+# Disable layout processing for HTML files
+defaults:
+  - scope:
+      path: "index.html"
+    values:
+      layout: none
