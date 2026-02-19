@@ -1,0 +1,28 @@
+# Jekyll Configuration for Astra Portfolio
+title: "Astra Portfolio"
+description: "Personal Portfolio Website"
+baseurl: ""
+url: "https://wkeav.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - .gitignore
+  - .github/
+
+# Include files that start with underscore
+include:
+  - _pages
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Collections
+collections_dir: collections
