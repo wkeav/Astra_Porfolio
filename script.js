@@ -1,7 +1,7 @@
 // Theme Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const themeBtn = document.getElementById('theme-btn');
-    const volumeBtn = document.getElementById('volume-btn');
+    const volumeBtn = document.getElementById('volume-btn-corner');
     const body = document.body;
     const modalOverlay = document.getElementById('modal-overlay');
     const modalContent = document.getElementById('modal-content');
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (body.classList.contains('dark-mode')) {
             themeBtn.innerHTML = '<img src="assets/images/Moon.png" alt="theme" style="width: 45px; height: 45px; object-fit: contain;">';
         } else {
-            themeBtn.innerHTML = '<img src="assets/images/Sun.png" alt="theme" style="width: 45px; height: 45px; object-fit: contain;">';
+            themeBtn.innerHTML = '<img src="assets/images/Sun.png" alt="theme" style="width: 55px; height: 55px; object-fit: contain;">';
         }
     });
 
@@ -140,9 +140,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             
             <ul class="about-list">
-                <li>create <a href="#" target="_blank">hand-drawn animations</a>,</li>
-                <li>create <a href="#" target="_blank">videos</a> talking about things i like,</li>
-                <li>create website wireframes, and</li>
+                <li>create <a href="#" target="_blank">Software Development</a>,</li>
+                <li>create <a href="#" target="_blank">Al/ ML Development </li>
             </ul>
         `,
         Experience: `
@@ -195,6 +194,23 @@ matics, and research, improving AI accuracy.</p>
 
             <div style="text-align: center; padding: 20px;">
                 <h2 style="color: #FF8C00; margin-bottom: 10px;">My Leadership</h2>
+                <div style="display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; text-align: left;">
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
+                        <h3 style="color: #333; margin-bottom: 5px;">Outreach Director </h3>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">OU Gaming Development Association • Aug 2024-May 2025</p>
+                        <p style="color: #666;">Developed and implemented creative marketing strategies and graphic designs for social media platforms.</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
+                        <h3 style="color: #333; margin-bottom: 5px;">Undergraduate Organization Leader</h3>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">Undergraduate Organization Leader • Aug 2023-Oct 2023</p>
+                        <p style="color: #666;">Led undergraduate student volunteer team of 15+ members, providing Vietnamese-English translation services for different patients.</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
+                        <h3 style="color: #333; margin-bottom: 5px;">Surfing Instructor Assistant</h3>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">Shaka • Jun 2023-Jul 2023</p>
+                        <p style="color: #666;">Supported lead instructors in managing equipment and lesson preparation for 20+ students daily in Tenerife, Spain and maintained and organized surfing equipment, ensuring the safety and optimal condition of surfboards.</p>
+                    </div>
+                </div>
             </div>
         `,
         Projects: `
@@ -234,7 +250,7 @@ users in healthy habit formation</p>
                 </div>
             </div>
         `,
-        Edcuation: `
+        Education: `
             <div style="text-align: center; padding: 20px;">
                 <h2 style="color: #FF8C00; margin-bottom: 30px;">My Education</h2>
                 <div style="display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; text-align: left;">
@@ -298,7 +314,6 @@ users in healthy habit formation</p>
                         Send Message
                     </button>
                 </form>
-            
             </div>
         `,
         links: `
