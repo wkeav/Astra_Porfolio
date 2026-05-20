@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Rotating greeting
-    const greetings = ['Hello', 'Allo', 'Xin chào'];
+    const greetings = ['Hello', 'Xin chào', 'Allô'];
     let greetingIndex = 0;
     const greetingElement = document.getElementById('greeting');
     
@@ -145,11 +145,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </ul>
         `,
         Experience: `
+            
             <div style="text-align: center; padding: 20px;">
                 <h2 style="color: #FF8C00; margin-bottom: 10px;">My Experience</h2>
+                 <div style="display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; text-align: left;">
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
+                        <h3 style="color: #333; margin-bottom: 5px;">Computer Scientist Trainee </h3>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;"> 76th Software Engineering Group (SWEG)- Tinker AFB • May 2026-Present</p>
+                        <p style="color: #666;"></p>
                 <div style="display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; text-align: left;">
                     <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
-                        <h3 style="color: #333; margin-bottom: 5px;">AI Trainer - Multimodal Data Annotation</h3>
+                        <h3 style="color: #333; margin-bottom: 5px;">AI Trainer - Data Annotation</h3>
                         <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">Handshake AI • Dec 2025-Present</p>
                         <p style="color: #666;">Training AI models through multimodal data annotation and quality assurance.</p>
                     </div>
