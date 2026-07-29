@@ -161,11 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p style="color: #666;">Training AI models through multimodal data annotation and quality assurance.</p>
                     </div>
                     <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
-                        <h3 style="color: #333; margin-bottom: 5px;">Software Engineer Intern</h3>
-                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">Springer Capital • Oct 2025-Jan 2026</p>
-                        <p style="color: #666;">Engineered a Python-based DLT generator using Django and Flask-RESTX that automates creation of data pipeline services.</p>
-                    </div>
-                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
                         <h3 style="color: #333; margin-bottom: 5px;">Undergraduate Researcher</h3>
                         <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">University of Oklahoma • May 2025-Jan 2026</p>
                         <p style="color: #666;">Addressed 15% misidentification rate in endoscopic surgeries by collaborating with Ph.D. researchers to develop deep learning models
