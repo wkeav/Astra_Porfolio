@@ -8,48 +8,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalTabTitle = document.getElementById('modal-tab-title');
     const closeModal = document.getElementById('close-modal');
 
-    // Welcome page functionality
-    const welcomePage = document.getElementById('welcome-page');
-    const focusBtn = document.getElementById('focus-btn');
-    
-    if (focusBtn && welcomePage) {
-        focusBtn.addEventListener('click', function() {
-            welcomePage.classList.add('hidden');
-        });
+    // Altitude readout: small drift around cruising altitude
+    const altitudeEl = document.getElementById('altitude');
+    if (altitudeEl) {
+        let altitude = 35000;
+        setInterval(() => {
+            altitude += Math.round((Math.random() - 0.5) * 4) * 10;
+            altitude = Math.min(35200, Math.max(34800, altitude));
+            altitudeEl.textContent = altitude.toLocaleString('en-US');
+        }, 1500);
     }
 
-    // Image rotation functionality
-    const rotatingImages = document.querySelectorAll('.rotating-image');
-    const welcomeMountain = document.querySelector('.welcome-mountain');
-    let currentImageIndex = 0;
-    
-    // Function to rotate to next image
-    function rotateToNextImage() {
-        if (rotatingImages.length > 0) {
-            // Hide current image
-            rotatingImages[currentImageIndex].classList.remove('active');
-            
-            // Move to next image
-            currentImageIndex = (currentImageIndex + 1) % rotatingImages.length;
-            
-            // Show next image
-            rotatingImages[currentImageIndex].classList.add('active');
-        }
-    }
-    
-    // Rotate on page load/restart (after a short delay)
-    setTimeout(() => {
-        rotateToNextImage();
-    }, 1000);
-    
-    // Rotate every 3 minutes
-    if (rotatingImages.length > 0) {
-        setInterval(rotateToNextImage, 180000); // 3 minutes = 180,000 milliseconds
-    }
-    
-    // Rotate on hover over the image area
-    if (welcomeMountain) {
-        welcomeMountain.addEventListener('mouseenter', rotateToNextImage);
+    // Rotating subtitle
+    const subtitles = ['Software Engineer · Aerospace', 'Full-Stack Developer', 'AI / ML Engineer'];
+    let subtitleIndex = 0;
+    const subtitleEl = document.getElementById('subtitle-text');
+    if (subtitleEl) {
+        setInterval(() => {
+            subtitleEl.classList.add('fade');
+            setTimeout(() => {
+                subtitleIndex = (subtitleIndex + 1) % subtitles.length;
+                subtitleEl.textContent = subtitles[subtitleIndex];
+                subtitleEl.classList.remove('fade');
+            }, 400);
+        }, 4000);
     }
 
     // Rotating greeting
@@ -113,14 +95,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="profile-image">A</div>
                 <div class="about-text">
                     <h2 class="about-name">Astra Nguyen</h2>
-                    <p class="about-title">Full-Stack Development, Artificial Intelligence (AI)/ Machine Learning</p>
-                    <p class="about-company"> CS Student At <a href="https://www.ou.edu/" target="_blank"> Univeristy of Oklahoma</a></p>
+                    <p class="about-title">Aerospace Software Engineering · Full-Stack · AI/ML</p>
+                    <p class="about-company">Computer Scientist at the 76th Software Engineering Group, Tinker AFB</p>
+                    <p class="about-company">CS Student at <a href="https://www.ou.edu/" target="_blank">University of Oklahoma</a> · Graduating Dec 2026</p>
                 </div>
             </div>
-            <p class="about-description">To me, the biggest appeal and excitement of computer science is the satisfaction of transforming an idea, into a real-world solution that can make a tangible impact. It's amazing the power a computer can hold and innovate. I plan to enhance my technical skills, creative skills, and soft skills to build meaningful innovations, and I look forward to leveraging my education to drive technology solutions that matter.</p>
-            
+            <p class="about-description">To me, the biggest appeal and excitement of computer science is the satisfaction of transforming an idea into a real-world solution that can make a tangible impact. Today I get to do that in aerospace, building software that supports military aviation, while researching how AI can help engineers design better software architecture. I plan to keep growing my technical, creative, and soft skills to build meaningful innovations, and I look forward to a career building technology that matters.</p>
+
+            <a class="resume-btn" href="assets/Astra_Nguyen_Resume.pdf" target="_blank" rel="noopener" download>✈ Download Resume</a>
+
             <h3 style="color: #FF8C00; margin-top: 30px; margin-bottom: 20px;">Tech Skills</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                <div style="background: #f8f9fa; border-radius: 12px; padding: 15px; border: 2px solid #eee;">
+                    <h4 style="color: #333; margin-bottom: 10px;">Languages</h4>
+                    <p style="color: #666; font-size: 14px;">Java, C#, C++, Ada, Python, JavaScript</p>
+                </div>
                 <div style="background: #f8f9fa; border-radius: 12px; padding: 15px; border: 2px solid #eee;">
                     <h4 style="color: #333; margin-bottom: 10px;">Frontend</h4>
                     <p style="color: #666; font-size: 14px;">React.js, Flutter, HTML/CSS, JavaScript</p>
@@ -139,22 +128,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             
+            <h3 style="color: #FF8C00; margin-top: 10px; margin-bottom: 12px;">Currently</h3>
             <ul class="about-list">
-                <li>create <a href="#" target="_blank">Software Development</a>,</li>
-                <li>create <a href="#" target="_blank">Al/ ML Development </li>
+                <li>building mission software as a Computer Scientist at the 76th SWEG,</li>
+                <li>researching AI for software architecture at OU's Gallogly College of Engineering, and</li>
+                <li>finishing my B.S. in Computer Science (Dec 2026).</li>
             </ul>
         `,
         Experience: `
             
             <div style="text-align: center; padding: 20px;">
                 <h2 style="color: #FF8C00; margin-bottom: 10px;">My Experience</h2>
-                 <div style="display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; text-align: left;">
-                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
-                        <h3 style="color: #333; margin-bottom: 5px;">Computer Scientist Trainee </h3>
-                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;"> 76th Software Engineering Group (SWEG)- Tinker AFB • May 2026-Present</p>
-                        <p style="color: #666;"></p>
-                        </div>
                 <div style="display: flex; flex-direction: column; gap: 25px; max-width: 600px; margin: 0 auto; text-align: left;">
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
+                        <h3 style="color: #333; margin-bottom: 5px;">Undergraduate Research Assistant - Software Engineer with AI</h3>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">University of Oklahoma – Gallogly College of Engineering • Sep 2026-Present</p>
+                        <p style="color: #666;">Part-time · Hybrid · Software Architecture and Software Architectural Design</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
+                        <h3 style="color: #333; margin-bottom: 5px;">Computer Scientist</h3>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">76th Software Engineering Group (SWEG) - Tinker AFB • Aug 2026-Present</p>
+                        <p style="color: #666;">Full-time</p>
+                    </div>
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
+                        <h3 style="color: #333; margin-bottom: 5px;">Computer Scientist Trainee</h3>
+                        <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">76th Software Engineering Group (SWEG) - Tinker AFB • May 2026-Aug 2026</p>
+                    </div>
                     <div style="padding: 20px; background: #f8f9fa; border-radius: 15px; border: 2px solid #eee;">
                         <h3 style="color: #333; margin-bottom: 5px;">AI Trainer - Data Annotation</h3>
                         <p style="color: #FF8C00; margin-bottom: 10px; font-weight: 500;">Handshake AI • Dec 2025-Present</p>
@@ -278,33 +277,51 @@ matics, and research, improving AI accuracy.</p>
             </div>
         `,
         Contact: `
-            <div style="max-width: 500px; margin: 0 auto;">
-                <h2 style="color: #FF8C00; margin-bottom: 30px; text-align: center;">Let's Work Together!</h2>
-                <form style="display: flex; flex-direction: column; gap: 20px;">
-                    <div>
-                        <label style="display: block; margin-bottom: 5px; color: #333; font-weight: 500;">Name</label>
-                        <input type="text" style="width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 16px;" placeholder="Your name">
+            <div class="boarding-pass">
+                <div class="bp-main">
+                    <div class="bp-header">
+                        <span class="bp-airline">✈ ASTRA AIR</span>
+                        <span class="bp-class">BOARDING PASS · FIRST CLASS</span>
                     </div>
-                    <div>
-                        <label style="display: block; margin-bottom: 5px; color: #333; font-weight: 500;">Email</label>
-                        <input type="email" style="width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 16px;" placeholder="your@email.com">
+                    <div class="bp-route">
+                        <div class="bp-city">
+                            <span class="bp-code">YOU</span>
+                            <span class="bp-label">From: wherever you are</span>
+                        </div>
+                        <div class="bp-path">
+                            <span class="bp-dash"></span>
+                            <span class="bp-plane">✈</span>
+                            <span class="bp-dash"></span>
+                        </div>
+                        <div class="bp-city bp-city-right">
+                            <span class="bp-code">AST</span>
+                            <span class="bp-label">To: Astra Nguyen</span>
+                        </div>
                     </div>
-                    <div>
-                        <label style="display: block; margin-bottom: 5px; color: #333; font-weight: 500;">Project Type</label>
-                        <select style="width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 16px;">
-                            <option>Web Development</option>
-                            <option>Mobile Development</option>
-                            <option>AI / Machine Learning</option>
-                            <option>Other</option>
-                        </select>
+                    <div class="bp-details">
+                        <div><span class="bp-label">Flight</span><span class="bp-value">AN 2026</span></div>
+                        <div><span class="bp-label">Gate</span><span class="bp-value">OKC</span></div>
+                        <div><span class="bp-label">Seat</span><span class="bp-value">1A</span></div>
+                        <div><span class="bp-label">Boarding</span><span class="bp-value">NOW</span></div>
                     </div>
-                    <div>
-                        <label style="display: block; margin-bottom: 5px; color: #333; font-weight: 500;">Message</label>
-                        <textarea style="width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 16px; min-height: 100px; resize: vertical;" placeholder="Tell me about your project..."></textarea>
-                    </div>
-                    <button type="submit" style="background: #FF8C00; color: white; border: none; padding: 15px; border-radius: 8px; font-size: 16px; font-weight: 500; cursor: pointer; transition: background-color 0.3s ease;">
-                        Send Message
-                    </button>
+                    <p class="bp-note">Open to software roles in aerospace, AI/ML and full-stack. Pick a gate and let's connect!</p>
+                </div>
+                <div class="bp-stub">
+                    <span class="bp-label">Choose your gate</span>
+                    <a class="bp-gate" href="https://www.linkedin.com/in/astra-n-40b024259/" target="_blank" rel="noopener">Gate A · LinkedIn →</a>
+                    <a class="bp-gate" href="https://github.com/wkeav" target="_blank" rel="noopener">Gate B · GitHub →</a>
+                    <a class="bp-gate bp-gate-resume" href="assets/Astra_Nguyen_Resume.pdf" target="_blank" rel="noopener" download>Gate C · Resume ↓</a>
+                    <div class="bp-barcode" aria-hidden="true"></div>
+                </div>
+            </div>
+
+            <div class="tower-form">
+                <h3>Radio the tower 📡</h3>
+                <form>
+                    <input type="text" placeholder="Your name">
+                    <input type="email" placeholder="your@email.com">
+                    <textarea placeholder="What would you like to talk about?"></textarea>
+                    <button type="submit">Transmit Message</button>
                 </form>
             </div>
         `,
@@ -423,8 +440,15 @@ matics, and research, improving AI accuracy.</p>
     const navItems = document.querySelectorAll('.nav-item');
     const navTabs = document.querySelectorAll('.nav-tab');
     
+    const flightNames = {
+        About: 'Crew', Experience: 'Flight Log', Projects: 'Hangar',
+        Education: 'School', Contact: 'Control Tower'
+    };
+
     function showModal(section) {
-        modalTabTitle.textContent = section;
+        modalTabTitle.textContent = flightNames[section]
+            ? `${flightNames[section]} · ${section.toLowerCase()}`
+            : section;
         modalContent.innerHTML = modalContents[section] || '<p>Content coming soon!</p>';
         modalOverlay.classList.add('active');
         
@@ -440,7 +464,7 @@ matics, and research, improving AI accuracy.</p>
     // Main navigation click handlers
     navItems.forEach(item => {
         item.addEventListener('click', function() {
-            const section = this.querySelector('.nav-label').textContent;
+            const section = this.dataset.section;
             
             // Add click animation
             this.style.transform = 'translateY(-5px) scale(0.95)';
